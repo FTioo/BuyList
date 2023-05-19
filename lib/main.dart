@@ -6,7 +6,17 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MultiProvider(
+    providers: [
+      ChangeNotifierProvider(
+        create: (_) => DatabaseProvider(databaseHelper: DatabaseHelper()),
+      ),
+      ChangeNotifierProvider(
+        create: (_) => DatabaseHelper(),
+      ),
+    ],
+    child: const MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {

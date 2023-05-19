@@ -1,8 +1,9 @@
 import 'package:buylist/Models/task_model.dart';
+import 'package:flutter/foundation.dart';
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 
-class DatabaseHelper {
+class DatabaseHelper extends ChangeNotifier {
   static DatabaseHelper? _databaseHelper;
   static Database? _database;
 
@@ -38,7 +39,6 @@ class DatabaseHelper {
   Future<void> insertTask(TaskModel taskModel) async {
     final Database? db = await database;
     await db!.insert(_tableName, taskModel.toMap());
-    print('Data has saved');
   }
 
   Future<List<TaskModel>> getTasks() async {

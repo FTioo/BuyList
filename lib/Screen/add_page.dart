@@ -43,7 +43,7 @@ class _AddScreenState extends State<AddScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Add Item'),
+        title: const Text('Add Item'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -54,7 +54,7 @@ class _AddScreenState extends State<AddScreen> {
             children: [
               TextFormField(
                 controller: _itemNameController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: 'Item Name',
                 ),
                 validator: (value) {
@@ -66,7 +66,7 @@ class _AddScreenState extends State<AddScreen> {
               ),
               TextFormField(
                 controller: _quantityController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: 'Quantity',
                 ),
                 keyboardType: TextInputType.number,
@@ -79,7 +79,7 @@ class _AddScreenState extends State<AddScreen> {
               ),
               TextFormField(
                 controller: _priceController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: 'Price',
                 ),
                 keyboardType: TextInputType.number,
